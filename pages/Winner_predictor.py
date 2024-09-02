@@ -5,9 +5,9 @@ import pandas as pd
 def run_winner_predictor_page():
     teams = ['Sunrisers Hyderabad',
             'Mumbai Indians',
-            'Royal Challengers Bangalore',
+            'Royal Challengers Bengaluru',
             'Kolkata Knight Riders',
-            'Kings XI Punjab',
+            'Punjab Kings',
             'Chennai Super Kings',
             'Rajasthan Royals',
             'Delhi Capitals',
