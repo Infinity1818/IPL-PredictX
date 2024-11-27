@@ -36,12 +36,12 @@ def run_winner_predictor_page():
 
     selected_city = st.selectbox('Select host city', sorted(cities))
 
-    target = st.number_input('Target', min_value=0, step=1, format="%d")
+    target = st.number_input('Target')
 
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        score = st.number_input('Current Score', min_value=0, step=1, format="%d")
+        score = st.number_input('Current Score')
     with col4:
         overs = st.selectbox('Overs', sorted(over))
     with col5:
