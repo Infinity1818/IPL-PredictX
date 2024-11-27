@@ -6,8 +6,8 @@ import xgboost
 from xgboost import XGBRegressor
 
 def run_score_predictor_page():
-    # pipe = pickle.load(open('models/score_predictor.pkl', 'rb'))
-    pipe = pickle.load(open('models/score_predictor_2022.pkl', 'rb'))
+    pipe = pickle.load(open('models/score_predictor.pkl', 'rb'))
+    # pipe = pickle.load(open('models/score_predictor_2022.pkl', 'rb'))
 
     teams = ['Sunrisers Hyderabad',
             'Mumbai Indians',
@@ -36,7 +36,7 @@ def run_score_predictor_page():
     with col2:
         bowling_team = st.selectbox('Select bowling team', sorted(teams))
 
-    city = st.selectbox('Select city', sorted(cities))
+    city = st.selectbox('Select host city', sorted(cities))
 
     col3, col4, col5 = st.columns(3)
 

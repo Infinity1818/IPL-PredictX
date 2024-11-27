@@ -5,9 +5,9 @@ import pandas as pd
 def run_winner_predictor_page():
     teams = ['Sunrisers Hyderabad',
             'Mumbai Indians',
-            'Royal Challengers Bangalore',
+            'Royal Challengers Bengaluru',
             'Kolkata Knight Riders',
-            'Kings XI Punjab',
+            'Punjab Kings',
             'Chennai Super Kings',
             'Rajasthan Royals',
             'Delhi Capitals',
@@ -23,8 +23,8 @@ def run_winner_predictor_page():
     wicket = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     over = [1,2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
-    # pipe = pickle.load(open('models/winner_predictor.pkl', 'rb'))
-    pipe = pickle.load(open('models/winner_predictor_2022.pkl', 'rb'))
+    pipe = pickle.load(open('models/winner_predictor.pkl', 'rb'))
+    # pipe = pickle.load(open('models/winner_predictor_2022.pkl', 'rb'))
     st.title('Winner Predictor After First Inning')
 
     col1, col2 = st.columns(2)
@@ -41,13 +41,13 @@ def run_winner_predictor_page():
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        score = st.number_input('Score')
+        score = st.number_input('Current Score')
     with col4:
         overs = st.selectbox('Overs', sorted(over))
     with col5:
         wicket = st.selectbox('Wicket', sorted(wicket))
 
-    if st.button('Predict Probability'):
+    if st.button('Predict Winner'):
         runs_left = target - score
         balls_left = 120 - (overs * 6)
         wickets = 10 - wicket
