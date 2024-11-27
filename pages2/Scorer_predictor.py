@@ -41,13 +41,13 @@ def run_score_predictor_page():
     col3, col4, col5 = st.columns(3)
 
     with col3:
-        current_score = st.number_input('Current Score', min_value=0, step=1, format="%d")
+        current_score = st.number_input('Current Score')
     with col4:
         overs = st.selectbox('Overs', sorted(over))
     with col5:
         wickets = st.selectbox('Wicket', sorted(wicket))
 
-    last_three_run = st.number_input('Runs scored in last 3 overs', min_value=0, step=1, format="%d")
+    last_three_run = st.number_input('Runs scored in last 3 overs')
 
 
     if st.button('Predict Score'):
